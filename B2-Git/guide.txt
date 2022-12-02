@@ -9,6 +9,7 @@
 + git clone {link repositories}: lấy source code về - lần đầu tiên.
 + git add B2-Git/test.txt (tên file)
 + git pull để lấy về 
++ git fetch để check xem có gì mới không ?
 
 các lệnh tương tác với terminal
 + cd {tên thư mục} : đi vào 1 thư mục nào đấy
