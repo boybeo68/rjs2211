@@ -1,0 +1,3 @@
+- tạo repositories lưu trữ bài tập về nhà
+- push demo bt buoi 2 lên git 
+- gửi lại link repositories vào nhóm lớp
