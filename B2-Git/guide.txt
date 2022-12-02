@@ -15,3 +15,4 @@ các lệnh tương tác với terminal
 + cd ..: đi ra khỏi thư mục 
 
 sử dụng vscode => trực quan hoá git.
+push code buôi 3sdfsfs
