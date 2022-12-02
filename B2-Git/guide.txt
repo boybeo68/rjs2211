@@ -6,3 +6,4 @@
 + git commit -m "first commit" (đặt tên cho commit : version)
 + git remote add origin https://github.com/boybeo68/rjs2211.git : link remote vào local 
 + git push --set-upstream origin master
+test 2
