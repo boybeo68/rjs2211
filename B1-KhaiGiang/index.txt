@@ -1,0 +1,40 @@
+- Thời gian học: 
++ Tối thứ 4, và tối thứ 6
++ 18h45. Mỗi buổi 3 tiếng, 15p nghỉ giải lao, 1h45 - 2h: main tech, điểm danh 7h30.
+- Kênh trao đổi: zalo. 
+
+** Lộ trình học: 28 buổi học trong đó: 
+- 5 buổi HTML, CSS
+    + 1 buổi về Git. Cực kì cần thiết trong suốt quá trình làm việc. 
+    + HTLM cơ bản: các thẻ cơ bản trong HTML, form, 
+    + CSS cơ bản: các cách style giao diện, căn chỉnh layout: flex. 
+    + 1 bài kiểm tra (3 tiếng): cắt giao diện page sử dụng figma
+    + Tài liệu: https://www.w3schools.com/html/default.asp (HTM: - đầu -> forms) (CSS: hết tutorial)
+    + Tài liệu2: https://www.freecodecamp.org/learn/2022/responsive-web-design/
+    + Tài liệu3: youtube ( cài ex: eJOY eXtension)
+- 10 buổi JS: 
+    + Js cơ bản, và Js nâng cao: nền tảng của 1 ngôn ngữ lập trình
+    Cơ bản: khai báo biến, vòng lặp, toán tử (+ - * / % ), so sánh, kiểu dữ liệu
+    Nâng cao: Array, Object, thêm sửa xoá => quản lý sinh viên (CRUD)
+    Bất đồng bộ: Thao tác API
+    + 1 bài kiểm tra 3 (tiếng)
+- 10 buổi ReactJS:
+    + RJ cơ bản: state, prop, tương tác với api...
+    + hook, redux, navigate...
+    => làm thông qua project (4 project)
+    => tự pick ra đồ án cá nhân. 
+- 2 buổi trao đổi: join lớp học trao đổi với thầy. 
+
+- 1 buổi bảo vệ đồ án: trả lời câu hỏi của thầy.
+    tái hiện việc phỏng vấn
+
+** cài đặt 1 số công cụ.
+- vs code + eXtension: https://code.visualstudio.com/download
+- git: https://git-scm.com/downloads
+- nodeJS: https://nodejs.org/en/
+- yarn: npm install --global yarn
+- check version: git --version, node --version , npm --version, yarn --version
+
+** roadmap
+- https://roadmap.sh/frontend
+- https://roadmap.sh/react
