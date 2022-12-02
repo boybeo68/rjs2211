@@ -10,6 +10,7 @@
 + git add B2-Git/test.txt (tên file)
 + git pull để lấy về 
 + git fetch để check xem có gì mới không ?
++ git status: check sự thay đổi.
 
 các lệnh tương tác với terminal
 + cd {tên thư mục} : đi vào 1 thư mục nào đấy
@@ -17,3 +18,4 @@ các lệnh tương tác với terminal
 
 sử dụng vscode => trực quan hoá git.
 push code buôi 3sdfsfs
+thay doi tiep
