@@ -6,3 +6,10 @@
 + git commit -m "first commit" (đặt tên cho commit : version)
 + git remote add origin https://github.com/boybeo68/rjs2211.git : link remote vào local 
 + git push --set-upstream origin master
++ git clone {link repositories}: lấy source code về - lần đầu tiên.
++ git add B2-Git/test.txt (tên file)
++ git pull để lấy về 
+
+các lệnh tương tác với terminal
++ cd {tên thư mục} : đi vào 1 thư mục nào đấy
++ cd ..: đi ra khỏi thư mục 
