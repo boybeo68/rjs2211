@@ -10,6 +10,8 @@
 + git add B2-Git/test.txt (tên file)
 + git pull để lấy về 
 
+
+
 các lệnh tương tác với terminal
 + cd {tên thư mục} : đi vào 1 thư mục nào đấy
 + cd ..: đi ra khỏi thư mục 
