@@ -1,0 +1,19 @@
+- Quản lý source code: 
++ share (push => remote => clone về để lấy code)
++ update source code: pull code về => có luôn code mới.
++ backup source. 
++ quản lý version:
+version 1: login 
+version 2: list product, 
+version 3: list category => bug (lỗi)
+=> back lại version 2.
++ teamwork: 
+ông A => login fb => đẩy lên drive 
+ông B => download về => list product. 
+case2 : làm luôn list product, ông A copy source code cho để t login vào rồi mới làm list product. 
+
+=====|=======================================================> master
+    start
+     ================> ông A phát triển  => merge ngược code vào thời điểm start
+     =======> ông B phát triển
+     
