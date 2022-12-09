@@ -12,11 +12,9 @@
 + git fetch để check xem có gì mới không ?
 + git status: check sự thay đổi.
 
+
 các lệnh tương tác với terminal
 + cd {tên thư mục} : đi vào 1 thư mục nào đấy
 + cd ..: đi ra khỏi thư mục 
-
-sử dụng vscode => trực quan hoá git.
-push code buôi 3sdfsfs
-thay doi tiep
-dfsdgdf
++ ls: list tên thư mục con 
++ ls -a: list tên thư mục con + file

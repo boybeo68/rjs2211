@@ -1,0 +1,2 @@
+- Git: branch, fix conflict
+- HTML: các thẻ cơ bản. 
