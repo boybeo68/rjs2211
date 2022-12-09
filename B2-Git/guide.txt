@@ -18,3 +18,4 @@ các lệnh tương tác với terminal
 + cd ..: đi ra khỏi thư mục 
 + ls: list tên thư mục con 
 + ls -a: list tên thư mục con + file
++ pwd: hiển thị đường dẫn đến folder
