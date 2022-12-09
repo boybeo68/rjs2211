@@ -1,0 +1,10 @@
+- Nguyên nhân: 2 người cùng sửa 1 dong -> git sẽ không hiểu lấy code của ai -> tạo PR thì
+sẽ báo conflict 
+
+vd : conflict khi merge từ:  master <- branch A 
+
+về nhánh branch A : pull code từ master về nhánh A 
+Check and fix conflict : chốt xem lấy code ở đâu : current ( code hiện tại), incoming (romte), both ...( cả 2 )
+add, commit 
+
+- Cách để giảm thiểu conflict. thông báo cho nhau. (Master đã được merge code mới. MN pull về nhé)
