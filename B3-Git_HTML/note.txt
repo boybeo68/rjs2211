@@ -1,0 +1,2 @@
+HTML: ngôn ngữ siêu văn bản, không phải ngôn ngữ lập trình. 
+cấu tạo bởi các thẻ, cặp thẻ 
