@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+  </head>
+  <body>
+    <!-- có 2 kiểu method chính: get, post -->
+    <!-- get: đẩy dữ liệu thông qua thanh url, dữ liệu không cần bảo mật, bị giới hạn 2048 ký tự  -->
+    <!-- post: đẩy dữ liệu thông qua payload của request, dữ liệu cần bảo mật, không giới hạn-->
+    <!-- action: thường dùng kèm method post => đẩy dữ liệu đến 1 url nào đó. -->
+    <form action="table.html" method="post">
+      UserName: <input type="text" />
+      <br />
+      Password: <input type="password" />
+      <br />
+
+      button <input type="button" /> <br />
+      checkbox<input type="checkbox" /> <br />
+      color<input type="color" /> <br />
+      date <input type="date" /> <br />
+
+      datetime-local<input type="datetime-local" name="date" /> <br />
+      email<input type="email" name="email" /> <br />
+      file <input type="file" /> <br />
+      hidden
+      <input type="hidden" /> <br />
+      image <input type="image" /> <br />
+      month<input type="month" /> <br />
+      number<input type="number" name="number" /> <br />
+      radio
+      <input type="radio" /> <br />
+
+      range <input type="range" /> <br />
+      reset
+      <input type="reset" /> <br />
+      search <input type="search" /> <br />
+      tel
+      <input type="tel" /> <br />
+      time<input type="time" /> <br />
+      url
+      <input type="url" /> <br />
+      week <input type="week" /> <br />
+      <br />
+      <br />
+      <hr />
+
+      <h2>Radio</h2>
+      <input type="radio" id="html" name="fav_language" value="HTML" />
+      <label for="html">HTML</label><br />
+      <input type="radio" id="css" name="fav_language" value="CSS" />
+      <label for="css">CSS</label><br />
+      <input
+        type="radio"
+        id="javascript"
+        name="fav_language"
+        value="JavaScript"
+      />
+      <label for="javascript">JavaScript</label>
+      <hr />
+      <h2>Checkbox</h2>
+      <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" />
+      <label for="vehicle1"> I have a bike</label><br />
+      <input type="checkbox" id="vehicle2" name="vehicle2" value="Car" />
+      <label for="vehicle2"> I have a car</label><br />
+      <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat" />
+      <label for="vehicle3"> I have a boat</label>
+      <hr />
+
+      <hr />
+      <label for="cars">Choose a car:</label>
+      <select id="cars" name="cars" size="3">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="fiat">Fiat</option>
+        <option value="audi">Audi</option>
+      </select>
+
+      <hr />
+      <label for="cars">Choose a car:</label>
+      <select id="cars" name="cars" size="4" multiple>
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="fiat">Fiat</option>
+        <option value="audi">Audi</option>
+      </select>
+      <textarea name="" id="" cols="30" rows="10"></textarea>
+      <input type="submit" />
+    </form>
+  </body>
+</html>
