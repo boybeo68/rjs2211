@@ -1,7 +1,7 @@
 - HTML: 
     + table
     + form
-- deploy page
+- deploy page: Sử dụng github (html, css, JS)
 - CSS:
     + các cách add css vào html 
     + selector cơ bản. 
