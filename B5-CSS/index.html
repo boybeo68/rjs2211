@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn CSS</title>
+    <style>
+      /* universal selector */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* html selector */
+      h1 {
+        color: red;
+      }
+      /* class selector */
+      .blue-color {
+        color: blue;
+      }
+      /* id selector */
+      #name {
+        background-color: aqua;
+        margin-left: 30px;
+      }
+
+      /* Selector phan cap */
+      .parent {
+        width: 100px;
+        height: 100px;
+        background-color: bisque;
+      }
+      /* phan cap cha con */
+      .parent > h3 {
+        color: red;
+      }
+      /* phan cap trong ngoai */
+      .parent h3 {
+        color: red;
+      }
+      /* liet ke, gom nhom  */
+      p,
+      span {
+        color: burlywood;
+      }
+    </style>
+  </head>
+  <body>
+    Hello
+    <h1 id="title" class="blue-color">This is H1</h1>
+    <h3 id="name">This is H3</h3>
+    <p class="blue-color">this is p1</p>
+    <span class="blue-color">this is span</span>
+    <div>Div ben ngoai</div>
+    <div class="parent">
+      <h3>child1</h3>
+      <div>
+        <h3>chau</h3>
+      </div>
+    </div>
+  </body>
+</html>
