@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .parent {
+        width: 500px;
+        height: 500px;
+        background-color: antiquewhite;
+        display: flex;
+        /* padding-left: 80px;
+        padding-right: 80px; */
+        flex-direction: row;
+        /* justify-content: căn chỉnh theo chiều ngang khi direction: row */
+        /* justify-content: căn chỉnh theo chiều dọc khi direction: column */
+        justify-content: flex-end;
+        /*  align-items: căn chỉnh theo chiều dọc khi direction: row */
+        /*  align-items: căn chỉnh theo chiều ngang khi direction: column */
+        align-items: center;
+      }
+      .child1 {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+      .child2 {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+      .child3 {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+      .center {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+      .parent > span {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="child1 center">1</div>
+      <div class="child2 center">2</div>
+      <div class="child3 center">3</div>
+    </div>
+
+    <!-- khai báo flex ở thẻ parrent, căn chia flex cũng ở parent -->
+  </body>
+</html>
+

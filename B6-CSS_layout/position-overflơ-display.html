@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .parent {
+        width: 500px;
+        height: 500px;
+        background-color: antiquewhite;
+        position: relative;
+      }
+      .block-test {
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+        position: relative;
+      }
+      .parent-overflow {
+        width: 600px;
+        height: 100px;
+        background-color: aquamarine;
+        position: relative;
+      }
+      .child {
+        width: 50px;
+        height: 50px;
+        background-color: red;
+        position: absolute;
+        left: 15px;
+        bottom: -20px;
+        border-radius: 25px;
+      }
+      .fixed {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 300px;
+        border: 3px solid #73ad21;
+      }
+      .inline-block {
+        width: 500px;
+        height: 100px;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- relative, abolute -->
+    <div class="parent">
+      <div class="child"></div>
+      <!-- nên sử dụng position khi muốn di chuyển phẩn tử con so với phần tử cha ( trường hợp đặc biệt: chồng lên nhau, vị trí không cân). Khi này cha đặt 1 cái relative , và con là absolute  -->
+      <!-- sử dụng khi muốn cố định 1 thẻ ở 1 ví trị nào đó -> không bị ảnh hưởng bởi scroll     -->
+    </div>
+    <!-- <div class="fixed">This div element has position: fixed;</div> -->
+    <div class="parent-overflow">
+      <ul>
+        <li>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, ex!
+        </li>
+        <li>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, ex!
+        </li>
+        <li>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, ex!
+        </li>
+        <li>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, ex!
+        </li>
+        <li>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, ex!
+        </li>
+      </ul>
+    </div>
+    <!-- display: block, inline, inline-block, flex => handle layout trong css -->
+    <!-- block: p, h, li,
+    inline: span, b, strong, i -->
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, sed?</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, sed?</p>
+    <span>Lorem ipsum dolor sit amet consectetur.</span> <b>123123</b>
+    <div class="block-test"></div>
+    <span class="inline-block">Lorem ipsum dolor sit amet consectetur.</span>
+    <span
+      >Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi,
+      nulla!</span
+    >
+  </body>
+</html>
