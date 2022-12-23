@@ -1,0 +1,5 @@
+computer: machine code : 010101010101
+
+JS -> machine code. 
+NodeJS: combine ở giữa.(của máy) => machine code. 
+enginev8: combine của trình duyệt 

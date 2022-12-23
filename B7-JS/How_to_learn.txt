@@ -1,0 +1,15 @@
+- Học JS: học về ngôn ngữ lập trình.
+- Cần chắc 1 ngôn ngữ lập trình => chuyển sang ngôn ngữ, công nghệ khác sẽ rất dễ. 
+Why? 
+*Step:
+- Tất cả ngôn ngữ lập trình đều có 1 core chung. => làm quen và biết cơ bản. 
++ Khai báo biến, các kiểu dữ liệu. 
++ Cú pháp logic toán học cơ bản: +, -, * , / , %, ?
++ Câu điều kiện: if, else , switch case. 
++ Vòng lặp: for, while, do while.
++ Các hảm xử lý liên quan đến kiểu dữ liệu ( oject, array, string, number)
++ xử lý liên quan đến function, method. 
+- Đặc thù của từng ngôn ngữ lập trình: (1,2 ngày)
++ Xử lý bất đồng bộ,
++ Array, object. ( map, filter, sort. replace....)
+- Làm project nhỏ (CRUD: create, read, update, delete)=> todo app. 
