@@ -19,3 +19,9 @@ let data = null;
 if (data) {
   console.log('co du lieu');
 }
+
+// ax2+bx+c=0
+// let a = 10;
+// let b = 20;
+// let c = 30;
+// console.log();
