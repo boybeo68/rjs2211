@@ -1,1 +1,14 @@
 - tìm hiểu về switch case và "vòng lặp"
+
+- sự khác nhau giữa let, var, const
++ khai báo.
++ gán giá trị 
++ scope.
+
+- kiểu dữ liệu: number, string, func , boolean, undefined , object.
+
+- undefined/ null : 
++ kiểu dữ liệu.
++ undefined: không được định nghĩa - khai báo mà đã sử dụng. null: đã được khai báo. và giá trị của nó là null ( không gì cả, khởi tạo)
+
+- %, ! , !=, ==, ===

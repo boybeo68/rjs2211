@@ -1,0 +1,4 @@
+-  ? : 
+- switch case 
+- for, while, do while 
+- làm bài tập. 
