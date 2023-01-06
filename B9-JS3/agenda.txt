@@ -1,0 +1,3 @@
+- string (xử lý string cơ bản: thêm, cắt, ...)
+- number, math (toán học, parse)
+- fuction (cú pháp, cách viêt, callback, )
