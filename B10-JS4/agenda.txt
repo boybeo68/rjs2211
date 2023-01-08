@@ -1,0 +1,1 @@
+ - Object, array (các hàm của object, array)

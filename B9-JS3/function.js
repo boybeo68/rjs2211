@@ -71,9 +71,42 @@ const symmetry = (k) => {
   }
 };
 
-const result = symmetry(1235221);
-if (result) {
-  console.log('là số đối xứng');
-} else {
-  console.log('không là số đối xứng');
-}
+// const result = symmetry(1235221);
+// if (result) {
+//   console.log('là số đối xứng');
+// } else {
+//   console.log('không là số đối xứng');
+// }
+
+// rest params. (...)
+//
+const sumAll = (...allParams) => {
+  let total = 0;
+  for (let index = 0; index < allParams.length; index++) {
+    const element = allParams[index];
+    total += element;
+  }
+  return total;
+};
+
+// console.log(sumAll(5, 6, 9));
+
+// callback function.
+// => 1 function như 1 params của function khác
+
+const aFunction = (callback) => {
+  console.log('Đây là functionstion A');
+  callback();
+};
+
+aFunction(() => {
+  console.log('Đây là function B');
+});
+// B được gọi là callback function
+// để thực hiện 1 tác vụ sau khi hoàn thành 1 tác vụ khác.
+
+// console.log('1');
+setTimeout(() => {
+  console.log('3');
+}, 3000); // chờ 3s mới chạy function bên trong.
+// console.log(2);
