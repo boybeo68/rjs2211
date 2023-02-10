@@ -4,7 +4,16 @@
 // console.log(convert);
 
 // Array : mảng => dữ liệu dạng list, thống kê, liệt kê, danh sách.
-const array = ['tung', 'trung', 'doan', 123, false, true, {data: 'Du lieu'}];
+const array = [
+  'tung',
+  'trung',
+  'doan',
+  123,
+  false,
+  true,
+  {data: 'Du lieu'},
+  [1, 2, 3],
+];
 const emptyArray = [];
 const listNumber = [1, 2, 3, 4];
 array[2] = 'update';
@@ -38,7 +47,7 @@ listNumber.pop();
 
 // console.log(listNumber);
 // thêm, xóa vào vị trí bất kỳ, - thay đổi mảng gốc - trả về array chưa các phần tử đã xóa.
-listNumber.splice(0, 2, 'Tung');
+listNumber.splice(0, 2, 'Tung', 'Hoa', 'TEst');
 // console.log(listNumber);
 // console.log(listNumber.indexOf(4));
 

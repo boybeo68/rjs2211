@@ -1,0 +1,2 @@
+- tìm hiểu về map, filter, reduce, sort, find, findIndex.
+- npm, yarn (quản lý thư viện)
