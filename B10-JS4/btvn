@@ -1,3 +1,10 @@
-- tìm hiểu về map, filter, reduce, sort. 
-sau đó làm bài 27, 28.
-https://techmaster.vn/posts/34372/hieu-ve-map-filter-va-reduce-trong-javascript
+- tìm hiểu về map, filter, reduce, sort.
+  sau đó làm bài 27, 28.
+  https://techmaster.vn/posts/34372/hieu-ve-map-filter-va-reduce-trong-javascript
+
+[
+{name: 'iphone', price: '2000$'},
+{name: 'iphone1', price: '6000$'},
+{name: 'iphone2', price: '9000$'},
+{name: 'iphone3', price: '10000$'},
+]
