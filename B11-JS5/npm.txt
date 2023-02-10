@@ -1,0 +1,2 @@
+npm (node package manager) : trình quản lý thư viện => kéo thư viện từ internet về và sử dụng. 
+Làm thế nào để biết 1 thư viện chất lượng ( star, weekly down, update thường xuyên hay không. )
