@@ -1,7 +1,8 @@
-// Tính diện tích hình thang (a + b) * h * (c, d) + (e, f) /2
+// Tính diện tích hình thang (a + b) * h * (c / d) + (e - f) /2
 // Thực hiện phép cộng mất 3000ms
 // Thực hiện phép nhân mất 2000ms
 // Thực hiện phép chia mất 1000ms
+// Thực hiện phép trừ mất 500ms
 // Trả về kết quả cuối cùng.
 // Sử dụng callback để xử lý
 
