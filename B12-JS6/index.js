@@ -20,4 +20,9 @@ doingCoffee((item, index) => {
   console.log('Done', item, index);
 });
 
-//
+// Tính diện tích hình thang (a + b) * h /2
+// Thực hiện phép cộng mất 3000ms
+// Thực hiện phép nhân mất 2000ms
+// Thực hiện phép chia mất 1000ms
+// Trả về kết quả cuối cùng.
+// Sử dụng callback để xử lý
