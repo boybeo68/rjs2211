@@ -1,4 +1,4 @@
-// Tính diện tích hình thang (a + b) * h * (c / d) + (e - f) /2
+// Tìm kết quả của phép toán (a + b) * h * (c / d) + (e - f) /2
 // Thực hiện phép cộng mất 3000ms
 // Thực hiện phép nhân mất 2000ms
 // Thực hiện phép chia mất 1000ms
@@ -30,6 +30,17 @@ const chia = (a, b, cb) => {
     cb(div);
   }, 1000);
 };
+const tru = (a, b, cb) => {
+  console.log('Start tru');
+  setTimeout(() => {
+    console.log('Tru xong', a - b);
+    const kqTru = a - b;
+    cb(kqTru);
+  }, 500);
+};
+
+// ketquaCuaPhepToan(5, 6, 10, 3, 4, 2, 5);
+ketquaCuaPhepToan(5, 6, 3, 4, 2, 5, 10);
 
 // const dataTong = tong(5, 6);
 // const dataNhan = nhan(dataTong, 10);
@@ -46,4 +57,27 @@ const dienTichHinhThang = (a, b, h) => {
   });
 };
 
-dienTichHinhThang(5, 6, 10);
+// dienTichHinhThang(5, 6, 10);
+
+const ketquaCuaPhepToan = (a, b, h, c, d, e, f) => {
+  tong(a, b, (kqTong) => {
+    nhan(kqTong, h, (kqNhan) => {
+      chia(c, d, (kqChia) => {
+        nhan(kqChia, kqNhan, (kqNhan2) => {
+          tru(e, f, (kqTru) => {
+            chia(kqTru, 2, (kqChia2) => {
+              tong(kqChia2, kqNhan2, (kqCuoi) => {
+                console.log('ket qua cuoi', kqCuoi);
+              });
+            });
+          });
+        });
+      });
+    });
+  });
+};
+
+// => call back hell : rất khó maintain
+//   sinh 2 cái để xử lý bất đồng bộ Promise và Async await .
+
+// Promise sẽ có trạng thái resolve, reject. => handle thành công/ lỗi
