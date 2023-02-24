@@ -2,6 +2,7 @@ import './App.css';
 import {useState} from 'react';
 import MenuHAHA from './components/Menu';
 import {Footer} from './components/Footer';
+import {studentConst, PI} from './ultils/helper';
 // state, data trong app
 // const student = {
 //   name: 'Tung',
@@ -9,8 +10,8 @@ import {Footer} from './components/Footer';
 // };
 // let counter = 0;
 function App() {
-  const [counter, setCounter] = useState(100);
-  const [student, setStudent] = useState({name: 'Tung', age: 20});
+  const [counter, setCounter] = useState(PI);
+  const [student, setStudent] = useState(studentConst);
   return (
     <div className='App'>
       <MenuHAHA />
