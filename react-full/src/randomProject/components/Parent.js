@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import {Button, Row} from 'react-bootstrap';
+import CartItem from './CartItem';
 
 import Child from './Child';
 
@@ -6,10 +8,10 @@ const Parent = () => {
   const [number, setNumber] = useState(90);
   const [showLight, setShowLight] = useState(false); // ush
   const [products, setProducts] = useState([
-    {name: 'Iphone', price: 20000},
-    {name: 'Android', price: 10000},
-    {name: 'Macbook', price: 50000},
-    {name: 'windowPhone', price: 1000},
+    {name: 'Iphone', price: 20000, img: 'https://picsum.photos/200'},
+    {name: 'Android', price: 10000, img: 'https://picsum.photos/200'},
+    {name: 'Macbook', price: 50000, img: 'https://picsum.photos/200'},
+    {name: 'windowPhone', price: 1000, img: 'https://picsum.photos/200'},
   ]);
   //   tất cả event nhận vào 1 function => chứ không phải chạy function
   const toggleChild = () => {
@@ -27,32 +29,29 @@ const Parent = () => {
     <div>
       <h2 className='parent-click'>Parent</h2>
       <p>
-        <button onClick={toggleChild}>toggle Child</button>
-        <button
+        <Button onClick={toggleChild} variant='success'>
+          toggle Child
+        </Button>{' '}
+        <Button
           onClick={() => {
             inCreeCount(10);
           }}
+          variant='primary'
         >
           incree Count
-        </button>
+        </Button>{' '}
       </p>
       <p>{number}</p>
       {showLight === true ? (
         <Child dataFromParent={number} name={'Tung'} />
       ) : null}
 
-      <ul>
+      <Row className='d-flex justify-content-around align-items-center'>
         {/* react render list thì luôn luôn phải add props key vào  */}
         {products.map((item, index) => {
-          return (
-            <li className='product' key={index}>
-              <span>
-                {item.name} - {item.price}
-              </span>
-            </li>
-          );
+          return <CartItem dataItem={item} />;
         })}
-      </ul>
+      </Row>
     </div>
   );
 };
