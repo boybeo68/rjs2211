@@ -15,3 +15,11 @@ State, props, event
 State: data trong 1 components. Data là tất cả kiểu dữ liệu JS đã học. thể hiện cho trạng thái để render
 Props: data dùng để truyền từ component này => component khác.
 state, props thay đổi => component sẽ render lại
+
+
+Bt: 
+
+Tạo 3 component: Menu, Body, Footer bọc trong 1 component Main
+Main: sẽ có state showFooter, button toggle ( click để show, hide footer)
+Main: truyền dữ liệu là 1 list student -> Body 
+Body: Hiển thị List student với UI. 
