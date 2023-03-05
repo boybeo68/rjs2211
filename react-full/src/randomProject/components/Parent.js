@@ -41,7 +41,9 @@ const Parent = () => {
           incree Count
         </Button>{' '}
       </p>
+
       <p>{number}</p>
+
       {showLight === true ? (
         <Child dataFromParent={number} name={'Tung'} />
       ) : null}
