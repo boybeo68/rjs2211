@@ -1,0 +1,17 @@
+create-react-app : react cli
+cli: 1 bộ base. react setup 1 số cái cơ bản. hot reload, package…
+class, function. => 2 cách viết react 
+old:
+- class. chuẩn => xử lý mọi thứ
+- fuction: muc đích chỉ để hiển thị UI . không có thay đổi dữ liệu, action 
+new: hook + function => all in one. => làm được mọi thứ như class ngày trước. cú pháp ngắn gọn, dễ tiếp cận với người học JS thuần túy, ko cần quan tâm đên context
+
+
+State, props, event
+=> project đầu tiên với react: random Number
+ State, props, render, event
+
+
+State: data trong 1 components. Data là tất cả kiểu dữ liệu JS đã học. thể hiện cho trạng thái để render
+Props: data dùng để truyền từ component này => component khác.
+state, props thay đổi => component sẽ render lại
