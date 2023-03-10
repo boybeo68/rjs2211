@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {Container, Row, Button, Form, InputGroup} from 'react-bootstrap';
+import {getRandomInt} from '../../ultils/globalFunction';
 const Main = () => {
   const [countGuess, setCountGuess] = useState(0);
   const [randomNumber, setrandomNumber] = useState(null);
@@ -10,11 +11,6 @@ const Main = () => {
   const guess = () => {
     setCountGuess(countGuess + 1);
   };
-  function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
 
   useEffect(() => {
     console.log('mouting');
