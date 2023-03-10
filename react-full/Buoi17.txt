@@ -1,0 +1,2 @@
+- useEffect
+- Thực hành random number project 

@@ -1,20 +1,46 @@
-import React from 'react';
-import Parent from '../components/Parent';
-import Menu from './Menu';
-import Menu2 from './Menu2';
-
+import React, {useState} from 'react';
+import {Container, Row, Button, Form, InputGroup} from 'react-bootstrap';
 const Main = () => {
+  const [countGuess, setCountGuess] = useState(0);
+  const [randomNumber, setrandomNumber] = useState(10);
+  const [inputValue, setinputValue] = useState('');
+  const newGame = () => {
+    setCountGuess(0);
+  };
+  const guess = () => {
+    setCountGuess(countGuess + 1);
+  };
+
   return (
-    <div>
-      <h1>Main</h1>
-      <Menu />
-      <Parent />
-      <div className='d-flex justify-content-center align-items-center'>
-        <div>item1</div>
-        <div>item2</div>
-        <div>item3</div>
-      </div>
-    </div>
+    <Container>
+      <Row>
+        <div className='fs-1 text-center m-5 fw-bold'>
+          Random Number (1-100)
+        </div>
+      </Row>
+      <Row>
+        <Button onClick={newGame} variant='primary'>
+          New game
+        </Button>
+      </Row>
+      <p className='my-2'>Số lần đoán của bạn là: {countGuess}</p>
+      <p>Giá trị của ô input là {inputValue}</p>
+      <InputGroup className='mb-3'>
+        <Form.Control
+          placeholder='Input number'
+          aria-label='Input number'
+          aria-describedby='basic-addon2'
+          type='number'
+          value={inputValue}
+          onChange={(text) => {
+            setinputValue(text.target.value);
+          }}
+        />
+        <Button onClick={guess} variant='success' id='button-addon2'>
+          Guess
+        </Button>
+      </InputGroup>
+    </Container>
   );
 };
 
