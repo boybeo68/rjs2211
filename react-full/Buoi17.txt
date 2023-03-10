@@ -1,2 +1,9 @@
 - useEffect
 - Thực hành random number project 
+- chú ý: Hàm set state là hàm bất đồng bộ
+
+lifecycle: vòng đời của component. Từng giai đoạn của component
+mounting: render ra dữ liệu : khi array rỗng [] sẽ tự động chạy fuctions 
+updating: function sẽ chạy khi params của array thay đổi
+unmounting: khi component bị hủy bỏ: sẽ chạy vào return nằm trong function
+

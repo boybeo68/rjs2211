@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Button, Row} from 'react-bootstrap';
 import CartItem from './CartItem';
 
 import Child from './Child';
 
 const Parent = () => {
-  const [number, setNumber] = useState(90);
+  const [number, setNumber] = useState(0);
   const [showLight, setShowLight] = useState(false); // ush
   const [products, setProducts] = useState([
     {name: 'Iphone', price: 20000, img: 'https://picsum.photos/200'},
@@ -24,6 +24,14 @@ const Parent = () => {
   //   để đẩm bảo tất cả event luôn nhận vào function chú ý tham số truyền vào.
   //   - function ko có tham số thì truyền trực tiếp vào event
   //   - function có tham số thì bọc trong 1 function khác
+
+  useEffect(() => {
+    console.log('check number thay đổi', number);
+  }, [number]); // mỗi lần number thay đổi sẽ chạy vào func
+
+  useEffect(() => {
+    console.log('check product thay đổi');
+  }, [products]);
 
   return (
     <div>

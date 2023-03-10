@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Container, Row, Button, Form, InputGroup} from 'react-bootstrap';
 const Main = () => {
   const [countGuess, setCountGuess] = useState(0);
-  const [randomNumber, setrandomNumber] = useState(10);
+  const [randomNumber, setrandomNumber] = useState(null);
   const [inputValue, setinputValue] = useState('');
   const newGame = () => {
     setCountGuess(0);
@@ -10,6 +10,17 @@ const Main = () => {
   const guess = () => {
     setCountGuess(countGuess + 1);
   };
+  function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  useEffect(() => {
+    console.log('mouting');
+    const random = getRandomInt(1, 100);
+    setrandomNumber(random);
+  }, []);
 
   return (
     <Container>
@@ -24,7 +35,7 @@ const Main = () => {
         </Button>
       </Row>
       <p className='my-2'>Số lần đoán của bạn là: {countGuess}</p>
-      <p>Giá trị của ô input là {inputValue}</p>
+      <p>{randomNumber}</p>
       <InputGroup className='mb-3'>
         <Form.Control
           placeholder='Input number'
