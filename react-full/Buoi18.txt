@@ -1,0 +1,3 @@
+- Call back trong props.
+
+- API -> làm việc với api. -> project nhỏ nhỏ về api. (weather app sử dụng api)

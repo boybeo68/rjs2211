@@ -6,7 +6,8 @@ import Child from './Child';
 
 const Parent = () => {
   const [number, setNumber] = useState(0);
-  const [showLight, setShowLight] = useState(false); // ush
+  const [childData, setchildData] = useState(null);
+  const [showLight, setShowLight] = useState(true); // ush
   const [products, setProducts] = useState([
     {name: 'Iphone', price: 20000, img: 'https://picsum.photos/200'},
     {name: 'Android', price: 10000, img: 'https://picsum.photos/200'},
@@ -33,9 +34,15 @@ const Parent = () => {
     console.log('check product thay đổi');
   }, [products]);
 
+  const handleClickChild = (data) => {
+    console.log('log data===== ', data);
+    setchildData(data);
+  };
+
   return (
     <div>
       <h2 className='parent-click'>Parent</h2>
+      <p>{childData}</p>
       <p>
         <Button onClick={toggleChild} variant='success'>
           toggle Child
@@ -49,11 +56,13 @@ const Parent = () => {
           incree Count
         </Button>{' '}
       </p>
-
       <p>{number}</p>
-
       {showLight === true ? (
-        <Child dataFromParent={number} name={'Tung'} />
+        <Child
+          handleClickChild={handleClickChild}
+          dataFromParent={number}
+          name={'Tung'}
+        />
       ) : null}
 
       <Row className='d-flex justify-content-around align-items-center'>
