@@ -1,3 +1,8 @@
 - Call back trong props.
 
 - API -> làm việc với api. -> project nhỏ nhỏ về api. (weather app sử dụng api)
+
+
+Tạo Parent component => truyền dữ liệu từ parent  -> child 
+Child  -> 1 button click reset lại data của parent đã truyền bên trên 
+Child -> 1 button click show alert hiển thị data ở parent 
