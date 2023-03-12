@@ -67,6 +67,7 @@ const Main = () => {
     <Container>
       <Row>
         <div
+          // style state
           className={`fs-1 text-center m-5 fw-bold ${
             checkResult === RESULT.thang
               ? 'text-success'
@@ -84,7 +85,6 @@ const Main = () => {
         </Button>
       </Row>
       <p className='my-2'>Số lần đoán của bạn là: {countGuess}</p>
-      <p>{randomNumber}</p>
       <InputGroup className='mb-3'>
         <Form.Control
           placeholder='Input number'
