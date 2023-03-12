@@ -13,7 +13,7 @@ const Body = ({
   return (
     <div>
       <Row>
-        <Button onClick={() => newGame('hello')} variant='primary'>
+        <Button onClick={newGame} variant='primary'>
           New game
         </Button>
       </Row>

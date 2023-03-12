@@ -6,3 +6,52 @@
 Tạo Parent component => truyền dữ liệu từ parent  -> child 
 Child  -> 1 button click reset lại data của parent đã truyền bên trên 
 Child -> 1 button click show alert hiển thị data ở parent 
+
+API:
+PHP, NodeJS, Java, C#... => công nghệ giúp làm cả FE và BE
+
+DB  - PHP - FE : "nằm trong cùng 1 project"
+shoppe: hiển thị danh sách sản phẩm. 
+issue: shoppe muốn làm thêm mobile app. chức năng về cơ bản giống web. 
+Làm lại từ đầu việc trên.
+DB - Mobile (React Native, Flutter, Android, IOS...) -> FE
+
+=> API. mục đích để tạo ra 1 cái gì đó dùng chung. 
+
+DB - PHP -> tạo ra api 
+web: FE web tương tác với api để lấy dữ liệu 
+mobile : FE mobile tương tác với api để lấy dữ liệu
+PC: ---------
+Mac App: ----------
+=> tạo ra sự chuyên biệt giữa FE và BE
+BE: chỉ cần quan tâm đến việc bussiness logic để tạo ra api -> deploy, performance
+FE: từ api làm nốt việc còn lại 
+
+API trông sẽ như thế nào. 
+
+api là 1 đường link url => trỏ đến server theo các phương thức GET, POST, PUT, DELETE...
+vd: https://635a75a238725a1746c6b8d3.mockapi.io/products
+GET: lấy dữ liệu về. 
+
+B1 sử postman để tương tác với api. => test output api.
+BE cung cấp cho FE 4 api để làm các chức năng 
+hiển thị list product : https://635a75a238725a1746c6b8d3.mockapi.io/products,  GET
+thêm mới product : https://635a75a238725a1746c6b8d3.mockapi.io/products, POST, 
+
+body. json
+{
+    "title": String,
+    "description": String,
+    "price": String
+}
+
+
+xóa product: https://635a75a238725a1746c6b8d3.mockapi.io/products/:id, DELETE
+update product,
+chi tiết 1 sản phẩm: https://635a75a238725a1746c6b8d3.mockapi.io/products/:id, GET
+
+
+btvn: Tạo api = mockapi hoặc 1 trang bất kỳ có thể tạo mockapi được.  
+vd: https://mockapi.io/
+
+sử dung postman để tương tác với api. 

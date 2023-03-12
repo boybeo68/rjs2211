@@ -20,7 +20,6 @@ const Main = () => {
     createRandom();
     setResult('');
     setcheckResult(RESULT.doing);
-    // alert(data);
   };
   const guess = () => {
     if (inputValue > randomNumber) {
