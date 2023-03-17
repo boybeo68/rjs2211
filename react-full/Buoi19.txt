@@ -1,0 +1,26 @@
+- BE làm trước. => output : API ( url, method, params)
+
+- FE: API => hiển thị lên giao diện. 
+
+thực tế: 
+BE và FE start đồng thời. 
+Thống nhất FE và BE
+
+Fe bảo. tôi cần 2 api. 1 api login, 1 api logout. 
+Be bảo: tôi chưa làm xong api này nên chúng ta sẽ thống nhất 
+
+api login sẽ đẩy lên các params như sau 
+"username": String
+"password": string
+
+api logout: sẽ đẩy lên 
+"userID"
+
+FE mock api để làm giao diện 
+
+BE xong thì gửi FE cái URL mới 
+
+=> mô hình vận hành dự án
+water fall : thác nước
+
+scrum: tất cả member cùng join 1 lúc. 
