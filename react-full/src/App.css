@@ -10,3 +10,8 @@
   padding: 10px;
   margin: 10px;
 }
+.deleteData {
+  cursor: pointer;
+  color: red;
+  font-weight: bold;
+}
