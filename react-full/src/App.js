@@ -5,7 +5,7 @@ import Parent from "./randomProject/components/learn/Parent";
 import Home from "./todoApp";
 
 function App() {
-  return <Parent />;
+  return <Home />;
 }
 
 export default App;

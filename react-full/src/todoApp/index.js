@@ -132,18 +132,22 @@ export default function Home() {
                 }}
                 key={index}
               >
-                <div>
-                  <p>
-                    {item.name} -{" "}
-                    <span
-                      onClick={() => deleteItem(item.id)}
-                      className="deleteData"
-                    >
-                      Delete
-                    </span>
-                  </p>
-                  <i>{item.description}</i>
-                </div>
+                {isEdit && isEdit === item.id ? (
+                  <input value={valueName} type="text" />
+                ) : (
+                  <div>
+                    <p>
+                      {item.name} -{" "}
+                      <span
+                        onClick={() => deleteItem(item.id)}
+                        className="deleteData"
+                      >
+                        Delete
+                      </span>
+                    </p>
+                    <i>{item.description}</i>
+                  </div>
+                )}
               </li>
             );
           })
