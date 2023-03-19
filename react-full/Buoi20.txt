@@ -1,0 +1,6 @@
+Overview
+- Học được syntax cơ bản trong React
++ logic trong UI, logic trong style: {}
++ state, props:  data trong component vs truyền dữ liệu qua lại giữa các component
++ lifecycle: useEffect (mouting, updating, unmounting)
++ API, tương tác với api.

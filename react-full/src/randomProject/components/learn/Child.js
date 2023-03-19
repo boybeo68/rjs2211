@@ -1,13 +1,15 @@
-import React, {useEffect, useState} from 'react';
-import {Button} from 'react-bootstrap';
+import React, { useEffect, useState } from "react";
+import { Button } from "react-bootstrap";
 
-const Child = ({name, dataFromParent, handleClickChild}) => {
-  const [childData, setChildData] = useState('hello. đây là dữ liệu từ child');
+const Child = ({ name, dataFromParent, handleClickChild }) => {
+  const [childData, setChildData] = useState("hello. đây là dữ liệu từ child");
   useEffect(() => {
     console.log(
-      'mounting: hay dùng cho những hành động muốn làm khi component xuất hiện',
+      "bb mounting: hay dùng cho những hành động muốn làm khi component xuất hiện"
     );
-
+    return () => {
+      console.log("bb compoennt biến mất rổi");
+    };
     // const time = setInterval(() => {
     //   console.log('counting');
     // }, 1000);
@@ -18,7 +20,7 @@ const Child = ({name, dataFromParent, handleClickChild}) => {
   }, []);
 
   return (
-    <div className='wrap-child'>
+    <div className="wrap-child">
       <h3>Child</h3>
       <p>{dataFromParent}</p>
       <p>{name}</p>
@@ -26,7 +28,7 @@ const Child = ({name, dataFromParent, handleClickChild}) => {
         onClick={() => {
           handleClickChild(childData);
         }}
-        variant='success'
+        variant="success"
       >
         Move data from child to parent
       </Button>

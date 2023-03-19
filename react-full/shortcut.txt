@@ -1,3 +1,6 @@
-rsc: create component
+rsc ( rfc): create component
 ush: useState
 ueh: useEffect
+met: function
+imp: import
+log: console.log
