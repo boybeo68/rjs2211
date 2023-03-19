@@ -11,6 +11,7 @@ export default function Home() {
   const [valueName, setvalueName] = useState("");
   const [valueDes, setValueDes] = useState("");
   const [loading, setLoading] = useState(false);
+  const [isEdit, setisEdit] = useState(null);
 
   useEffect(() => {
     getListTodo();
@@ -33,8 +34,7 @@ export default function Home() {
     setLoading(true);
     try {
       await axios.delete(`${URL}/${id}`);
-      setLoading(false);
-      getListTodo();
+      resetData();
     } catch (error) {
       setLoading(false);
       seterror("Có lỗi xảy ra");
@@ -49,14 +49,32 @@ export default function Home() {
         isCheck: false,
         description: valueDes,
       });
-      setLoading(false);
-      setvalueName("");
-      setValueDes("");
-      getListTodo();
+      resetData();
     } catch (error) {
       setLoading(false);
       seterror("Có lỗi xảy ra");
     }
+  };
+  const editTodo = async (id) => {
+    try {
+      setLoading(true);
+      await axios.put(`${URL}/${id}`, {
+        name: valueName,
+        isCheck: false,
+        description: valueDes,
+      });
+      resetData();
+    } catch (error) {
+      setLoading(false);
+      seterror("Có lỗi xảy ra");
+    }
+  };
+  const resetData = () => {
+    setLoading(false);
+    setvalueName("");
+    setValueDes("");
+    setisEdit(null);
+    getListTodo();
   };
 
   return (
@@ -85,16 +103,35 @@ export default function Home() {
           />
         </Form.Group>
 
-        <Button onClick={addItem} variant="primary">
-          Add
-        </Button>
+        {isEdit ? (
+          <Button onClick={() => editTodo(isEdit)} variant="success">
+            Edit
+          </Button>
+        ) : (
+          <Button onClick={addItem} variant="primary">
+            Add
+          </Button>
+        )}
       </Form>
       {loading ? <p>Loading...</p> : null}
       <ul>
         {todos ? (
           todos.map((item, index) => {
             return (
-              <li key={index}>
+              <li
+                onDoubleClick={() => {
+                  setvalueName(item.name);
+                  setValueDes(item.description);
+                  setisEdit(item.id);
+                }}
+                style={{
+                  cursor: "pointer",
+                  backgroundColor: "#f8f8f8",
+                  margin: "10px",
+                  padding: "10px",
+                }}
+                key={index}
+              >
                 <div>
                   <p>
                     {item.name} -{" "}
