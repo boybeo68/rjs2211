@@ -1,6 +1,16 @@
 Overview
 - Học được syntax cơ bản trong React
-+ logic trong UI, logic trong style: {}
-+ state, props:  data trong component vs truyền dữ liệu qua lại giữa các component
-+ lifecycle: useEffect (mouting, updating, unmounting)
++ Logic trong UI, logic trong style: {}
++ State, props:  data trong component vs truyền dữ liệu qua lại giữa các component
++ Lifecycle: useEffect (mouting, updating, unmounting)
 + API, tương tác với api.
+
+học trong 25 buổi. 
+3 buổi cuối: 
++ 2 buổi hướng dẫn làm đồ án: join để giải đáp thắc mắc, đưa solution, tài liệu...
++ 1 buổi bảo vệ đồ án: trung tâm (chuẩn bị slide, source code, video demo). demo dự án hoặc module mà mọi người tâm đắc nhất trong dự án.
+=> thêm thời gian. a hướng dẫn mn cách ôn luyện, tổng hợp kiến thức để interview tốt hơn. 
+
+
+tầm từ buổi 20 các bạn đã phải lên ý tưởng và bắt đầu coding. 
+buổi 26 học 1 tuần 1 buổi. 
