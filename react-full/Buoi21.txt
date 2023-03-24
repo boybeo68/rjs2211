@@ -1,0 +1,7 @@
+- Thưc hành với api. 
+- kỹ năng tìm kiếm => trên doc. 
+- Try. 
+vd speech to text ->  text to speech
+
+thực hành làm web dự báo thời tiết.
+

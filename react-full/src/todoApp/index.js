@@ -9,6 +9,7 @@ export default function Home() {
   const [todos, setTodos] = useState(null);
   const [error, seterror] = useState(null);
   const [valueName, setvalueName] = useState("");
+  const [valueNameEdit, setValueNameEdit] = useState("");
   const [valueDes, setValueDes] = useState("");
   const [loading, setLoading] = useState(false);
   const [isEdit, setisEdit] = useState(null);
@@ -59,7 +60,7 @@ export default function Home() {
     try {
       setLoading(true);
       await axios.put(`${URL}/${id}`, {
-        name: valueName,
+        name: valueNameEdit,
         isCheck: false,
         description: valueDes,
       });
@@ -120,7 +121,7 @@ export default function Home() {
             return (
               <li
                 onDoubleClick={() => {
-                  setvalueName(item.name);
+                  setValueNameEdit(item.name);
                   setValueDes(item.description);
                   setisEdit(item.id);
                 }}
@@ -133,7 +134,21 @@ export default function Home() {
                 key={index}
               >
                 {isEdit && isEdit === item.id ? (
-                  <input value={valueName} type="text" />
+                  <input
+                    value={valueNameEdit}
+                    onChange={(e) => {
+                      setValueNameEdit(e.target.value);
+                    }}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") {
+                        editTodo(isEdit);
+                      }
+                    }}
+                    onBlur={() => {
+                      editTodo(isEdit);
+                    }}
+                    type="text"
+                  />
                 ) : (
                   <div>
                     <p>
