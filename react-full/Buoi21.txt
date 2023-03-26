@@ -5,3 +5,7 @@ vd speech to text ->  text to speech
 
 thực hành làm web dự báo thời tiết.
 
+
+thông tin dự báo thời tiết hiện tại ở thành phố nào đó 
+- nhập vào tên thành phố => call api truyền tên thành phố lên => trả về lat, long
+- call api truyền lat, long của thành phố lên lên  => trả về thông tin thời tiết của thành phố đó

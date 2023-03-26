@@ -13,7 +13,7 @@ export default function Home() {
   const [valueDes, setValueDes] = useState("");
   const [loading, setLoading] = useState(false);
   const [isEdit, setisEdit] = useState(null);
-
+  const [counter, setcounter] = useState(0);
   useEffect(() => {
     getListTodo();
   }, []);
@@ -31,43 +31,92 @@ export default function Home() {
     }
   };
 
+  const deleteLocal = (id) => {
+    const listWithoutId = todos.filter((i) => i.id !== id);
+    setTodos(listWithoutId);
+    deleteItem(id);
+  };
+
   const deleteItem = async (id) => {
-    setLoading(true);
+    // setLoading(true);
     try {
       await axios.delete(`${URL}/${id}`);
-      resetData();
+      // resetData();
     } catch (error) {
       setLoading(false);
-      seterror("Có lỗi xảy ra");
+      // seterror("Có lỗi xảy ra");
+      alert("Có lỗi xảy ra khi xoá item.");
+      getListTodo();
     }
   };
 
   const addItem = async () => {
     try {
-      setLoading(true);
+      // setLoading(true);
       await axios.post(URL, {
         name: valueName,
         isCheck: false,
         description: valueDes,
       });
-      resetData();
+      // resetData();
     } catch (error) {
       setLoading(false);
-      seterror("Có lỗi xảy ra");
+      alert("Có lỗi xảy ra");
+      resetData();
     }
   };
+
+  const addItemLocal = () => {
+    // tương tác với state => không được phép thay đổi trực tiếp state. Tức là không được dùng hàm thay đỏi data ban đầu
+    // clone lại state trước khi làm
+    // C1: sử dụng Json parst + stringify. Dùng cho được mọi trường hợp
+    const cloneData = JSON.parse(JSON.stringify(todos));
+    cloneData.push({
+      id: Number(todos[todos.length - 1].id) + 1 + "",
+      name: valueName,
+      isCheck: false,
+      description: valueDes,
+    });
+    console.log(cloneData);
+    // C2: sử spread syntax . Chỉ clone đươc 1 level
+    // const cloneData = [{
+    //   id: 123,
+    //   name: valueName,
+    //   isCheck: false,
+    //   description: valueDes,
+    // }, ...todos, ]
+
+    setTodos(cloneData);
+    addItem();
+  };
+
+  const editLocal = (id) => {
+    const cloneTodos = JSON.parse(JSON.stringify(todos));
+    const findIndexItem = cloneTodos.findIndex((i) => i.id === id);
+    const dataFind = cloneTodos[findIndexItem];
+    cloneTodos.splice(findIndexItem, 1, {
+      id: dataFind.id,
+      name: valueNameEdit,
+      isCheck: false,
+      description: valueDes,
+    });
+    setTodos(cloneTodos);
+    setisEdit(null);
+    editTodo(id);
+  };
+
   const editTodo = async (id) => {
     try {
-      setLoading(true);
+      // setLoading(true);
       await axios.put(`${URL}/${id}`, {
         name: valueNameEdit,
         isCheck: false,
         description: valueDes,
       });
-      resetData();
     } catch (error) {
       setLoading(false);
-      seterror("Có lỗi xảy ra");
+      alert("Có lỗi xảy ra");
+      resetData();
     }
   };
   const resetData = () => {
@@ -109,7 +158,7 @@ export default function Home() {
             Edit
           </Button>
         ) : (
-          <Button onClick={addItem} variant="primary">
+          <Button onClick={addItemLocal} variant="primary">
             Add
           </Button>
         )}
@@ -141,7 +190,8 @@ export default function Home() {
                     }}
                     onKeyDown={(e) => {
                       if (e.key === "Enter") {
-                        editTodo(isEdit);
+                        editLocal(isEdit);
+                        // editTodo(isEdit);
                       }
                     }}
                     onBlur={() => {
@@ -154,7 +204,7 @@ export default function Home() {
                     <p>
                       {item.name} -{" "}
                       <span
-                        onClick={() => deleteItem(item.id)}
+                        onClick={() => deleteLocal(item.id)}
                         className="deleteData"
                       >
                         Delete

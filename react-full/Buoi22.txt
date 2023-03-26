@@ -1,0 +1,27 @@
+- Nghĩ đề tài cho đồ án cuối khoá
+=> đầu buổi sau sẽ chia sẻ lại. 
+
+
+                        // improve UX: actions local (phản hồi cho người dùng)  => sau đó tương tác với api ngầm => có lỗi thì mới báo người dùng
+
+
+    tương tác với state => không được phép thay đổi trực tiếp state. Tức là không được dùng hàm thay đỏi data ban đầu
+    clone lại state trước khi làm 
+    C1: sử dụng Json parst + stringify
+    const cloneData = JSON.parse(JSON.stringify(todos))
+    cloneData.push({
+      id: 123,
+      name: valueName,
+      isCheck: false,
+      description: valueDes,
+    })
+    C2: sử spread syntax 
+    const cloneData = [{
+      id: 123,
+      name: valueName,
+      isCheck: false,
+      description: valueDes,
+    }, ...todos, ]
+    
+
+    setTodos(cloneData)
