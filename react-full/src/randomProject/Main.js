@@ -1,37 +1,37 @@
-import React, {useState, useEffect} from 'react';
-import {Container, Row, Button, Form, InputGroup} from 'react-bootstrap';
-import {getRandomInt} from '../ultils/globalFunction';
-import Body from './components/Body';
-import Header from './components/Header';
+import React, { useState, useEffect } from "react";
+import { Container, Row, Button, Form, InputGroup } from "react-bootstrap";
+import { getRandomInt } from "../ultils/globalFunction";
+import Body from "./components/Body";
+import Header from "./components/Header";
 
 const RESULT = {
-  thang: 'thang',
-  thua: 'thua',
-  doing: 'doing',
+  thang: "thang",
+  thua: "thua",
+  doing: "doing",
 };
 const Main = () => {
   const [countGuess, setCountGuess] = useState(0);
   const [randomNumber, setrandomNumber] = useState(null);
-  const [inputValue, setinputValue] = useState('');
-  const [result, setResult] = useState('');
+  const [inputValue, setinputValue] = useState("");
+  const [result, setResult] = useState("");
   const [checkResult, setcheckResult] = useState(RESULT.doing);
   const newGame = (data) => {
     setCountGuess(0);
     createRandom();
-    setResult('');
+    setResult("");
     setcheckResult(RESULT.doing);
   };
   const guess = () => {
     if (inputValue > randomNumber) {
-      setResult('Số lớn quá rồi');
+      setResult("Số lớn quá rồi");
     } else if (inputValue < randomNumber) {
-      setResult('Số nhỏ quá rồi');
+      setResult("Số nhỏ quá rồi");
     } else {
       setResult(`Bạn đoán đúng rồi số ngẫu nhiên là ${randomNumber}`);
       setcheckResult(RESULT.thang);
     }
     setCountGuess(countGuess + 1);
-    setinputValue('');
+    setinputValue("");
   };
 
   useEffect(() => {
@@ -40,14 +40,14 @@ const Main = () => {
 
   useEffect(() => {
     if (countGuess > 7) {
-      setResult('Bạn đã thua rồi');
+      setResult("Bạn đã thua rồi");
       setcheckResult(RESULT.thua);
     }
   }, [countGuess]);
 
   useEffect(() => {
     if (checkResult === RESULT.thang) {
-      setResult('Sẽ reset game mới trong 5s...');
+      setResult("Sẽ reset game mới trong 5s...");
       setTimeout(() => {
         newGame();
       }, 5000);

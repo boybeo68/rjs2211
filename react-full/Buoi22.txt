@@ -2,8 +2,7 @@
 => đầu buổi sau sẽ chia sẻ lại. 
 
 
-                        // improve UX: actions local (phản hồi cho người dùng)  => sau đó tương tác với api ngầm => có lỗi thì mới báo người dùng
-
+    // improve UX: actions local (phản hồi cho người dùng)  => sau đó tương tác với api ngầm => có lỗi thì mới báo người dùng
 
     tương tác với state => không được phép thay đổi trực tiếp state. Tức là không được dùng hàm thay đỏi data ban đầu
     clone lại state trước khi làm 
@@ -25,3 +24,23 @@
     
 
     setTodos(cloneData)
+
+// Redux
+
+View: UI giao diện 
+State (store): data
+Action: những hành động dùng để thay đổi data. 
+
+
+
+Store: Nơi lưu trữ nhiều data (name, todos, counter, listProducts) ==> Giống như database
+Reducer: Mỗi loại data tron store => giống như các bảng trong databasse (user, products, todo )
+dispatch: thực thi actions. vd: actions changeName. dispatch(changeName())
+
+Step setup: 
+- add thư viện react-redux, redux toolkit
+- tạo store. bọc store bao toàn bộ app
+- Tạo slice (reducer)
+- import reducer vao store
+- lấy dữ liệu ra sử dụng useSelector
+tool debug và check redux : redux devtool
