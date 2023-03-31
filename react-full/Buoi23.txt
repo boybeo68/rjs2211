@@ -1,0 +1,6 @@
+thay đổi dữ liệu => actions sử dụng  useDispatch
+  import {useSelector, useDispatch} from 'react-redux';
+
+  const dispatch = useDispatch();
+
+  dispatch(increeCountWithParams(9));
