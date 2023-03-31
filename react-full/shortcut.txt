@@ -4,3 +4,4 @@ ueh: useEffect
 met: function
 imp: import
 log: console.log
+rxslice: tao slice trong redux
