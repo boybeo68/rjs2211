@@ -4,3 +4,23 @@ thay đổi dữ liệu => actions sử dụng  useDispatch
   const dispatch = useDispatch();
 
   dispatch(increeCountWithParams(9));
+
+
+rule: Không dược phép thay đổi trực tiếp state !!!!!  => tạo 1 bản sao trước khi tương tác
+Tuy nhiên redux toolkit => có hỗ trợ thay đổi trực tiếp. (tạo 1 bản sao ngầm bên dưới)
+
+
+redux toolkit cung câp 2 mode để tương tác với data object 
+- nếu muốn redux toolkit tự tạo bản sao thì 
+không return và chỉ sử dụng các phương thức thay đổi trực tiếp state
+
+- Nếu KHÔNg muốn redux toolkit tạo bản sao thì 
+tự clone và phải RETURN
+
+bài tập.
+Hoàn thiện các chức năng cơ bản liên quan đến posts
+- thêm bài post (nhập title, content, rate, nhập ảnh)
+- edit. 
+- filter 
+- hiển thị danh sách posts 
+- delete post. 
