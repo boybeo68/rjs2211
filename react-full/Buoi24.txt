@@ -1,3 +1,9 @@
 - Chú ý: 
 Luôn luôn LINH ĐỘNG giữa state (data trong component) và store (data trong redux)
 - Những data, actions thực sự cần share giữa nhiều component thì mới cho vào redux 
+Trước đây :
+- flow call api với state: 
++ sử dung axios call api => sau đó set lại dữ liệu vào state
+- flow call api với redux: 
++ giống trước dây: call api => dispatch action để set dữ liệu vào redux => dài dòng, handle case liên quan đến loading, lỗi 1 cách thủ công
++ sử dụng middleware trong redux để call api
