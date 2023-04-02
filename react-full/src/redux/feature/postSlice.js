@@ -1,26 +1,24 @@
-import {createSlice} from '@reduxjs/toolkit';
+import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
+import axios from 'axios';
 
 const initialState = {
-  data: [
-    {id: '1', content: 'Nội dung bài viết số 1', title: 'Bài 1', rate: 5},
-    {id: '2', content: 'Hello', title: 'Bài 2', rate: 2},
-    {
-      id: '3',
-      content:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, earum?',
-      title: 'Bài 3',
-      rate: 3,
-    },
-    {
-      id: '4',
-      content:
-        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore voluptate dicta ab, unde officiis doloribus deleniti veritatis magni similique recusandae.',
-      title: 'Bài 4',
-      rate: 5,
-    },
-  ],
+  data: {},
   dataFilter: null,
+  loading: false,
+  error: null,
 };
+
+export const getListPost = createAsyncThunk(
+  'products/getList',
+  async (arg, thunkApi) => {
+    console.log('bb arg', arg);
+    console.log('bb thunkapi', thunkApi.getState());
+    const res = await axios.get(
+      'https://reacjs2201-default-rtdb.firebaseio.com/products.json',
+    );
+    return res.data;
+  },
+);
 
 const postSlice = createSlice({
   name: 'post',
@@ -43,13 +41,28 @@ const postSlice = createSlice({
     filterPost: (state, action) => {
       // lọc tất cả những bài post có rate > action.payload
       const converData = JSON.parse(JSON.stringify(state));
-      const DataFilter = converData.data.filter((i) => i.rate > action.payload);
-      converData.dataFilter = DataFilter;
-      return converData;
+      const DataFilter = Object.keys(converData.data).filter(
+        (i) => converData.data[i].rate > action.payload,
+      );
+      state.dataFilter = DataFilter;
     },
     resetPost: (state, action) => {
       state.dataFilter = null;
     },
+  },
+  extraReducers(builder) {
+    builder
+      .addCase(getListPost.pending, (state, action) => {
+        state.loading = true;
+      })
+      .addCase(getListPost.fulfilled, (state, action) => {
+        state.loading = false;
+        state.data = action.payload;
+      })
+      .addCase(getListPost.rejected, (state, action) => {
+        state.loading = false;
+        state.error = 'Bị lỗi rồi';
+      });
   },
 });
 

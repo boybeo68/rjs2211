@@ -1,7 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import {Card, Button, Row} from 'react-bootstrap';
 import {useSelector, useDispatch} from 'react-redux';
-import {deletePost, filterPost, resetPost} from '../feature/postSlice';
+import {
+  deletePost,
+  filterPost,
+  getListPost,
+  resetPost,
+} from '../feature/postSlice';
 
 export default function Post() {
   const posts = useSelector((state) => state.posts);
@@ -14,6 +19,10 @@ export default function Post() {
   useEffect(() => {
     setPostLocal(posts);
   }, [posts]);
+
+  useEffect(() => {
+    dispatch(getListPost('tham so truyen vao'));
+  }, []);
   const filter = (rate) => {
     let converPost = JSON.parse(JSON.stringify(postLocal));
     converPost = converPost.filter((i) => i.rate > rate);
@@ -35,13 +44,13 @@ export default function Post() {
   return (
     <div>
       <h1>Post list</h1>
-      <Button onClick={() => filter(3)}>Filter post State</Button>
+      {/* <Button onClick={() => filter(3)}>Filter post State</Button>
       <Button
         style={{marginLeft: '10px', marginRight: '10px'}}
         onClick={() => reset()}
       >
         reset filter
-      </Button>
+      </Button> */}
       <Button
         style={{marginLeft: '10px', marginRight: '10px'}}
         onClick={() => filterRedux(3)}
@@ -60,38 +69,26 @@ export default function Post() {
         {posts.dataFilter
           ? posts.dataFilter.map((item, index) => {
               return (
-                <Card
-                  key={item.id}
-                  style={{width: '18rem', marginRight: '10px'}}
-                >
+                <Card key={item} style={{width: '18rem', marginRight: '10px'}}>
                   <Card.Img variant='top' src='holder.js/100px180' />
                   <Card.Body>
-                    <Card.Title>{item.title}</Card.Title>
-                    <Card.Text>{item.content}</Card.Text>
-                    <Button
-                      onClick={() => deleteItem(item.id)}
-                      variant='danger'
-                    >
+                    <Card.Title>{posts.data[item].title}</Card.Title>
+                    <Card.Text>{posts.data[item].content}</Card.Text>
+                    <Button onClick={() => deleteItem(item)} variant='danger'>
                       Delete
                     </Button>
                   </Card.Body>
                 </Card>
               );
             })
-          : posts.data.map((item, index) => {
+          : Object.keys(posts.data).map((item, index) => {
               return (
-                <Card
-                  key={item.id}
-                  style={{width: '18rem', marginRight: '10px'}}
-                >
+                <Card key={item} style={{width: '18rem', marginRight: '10px'}}>
                   <Card.Img variant='top' src='holder.js/100px180' />
                   <Card.Body>
-                    <Card.Title>{item.title}</Card.Title>
-                    <Card.Text>{item.content}</Card.Text>
-                    <Button
-                      onClick={() => deleteItem(item.id)}
-                      variant='danger'
-                    >
+                    <Card.Title>{posts.data[item].title}</Card.Title>
+                    <Card.Text>{posts.data[item].content}</Card.Text>
+                    <Button onClick={() => deleteItem(item)} variant='danger'>
                       Delete
                     </Button>
                   </Card.Body>
