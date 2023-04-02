@@ -22,3 +22,9 @@ Trước đây :
   arg: là tham số truyền vào khi dispatch
   thunkApi.getState(): lấy tất cả dữ liệu trong store
    thunkApi.dispatch(): thực hiện action
+
+
+ - get list products  
+ - Xử lý dữ liệu trả về để hiển thị dữ liệu ra 
+ - Làm chức năng filter redux
+ - Làm delete, edit product, add product 
