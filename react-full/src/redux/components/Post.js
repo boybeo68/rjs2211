@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Card, Button, Row} from 'react-bootstrap';
 import {useSelector, useDispatch} from 'react-redux';
 import {
-  deletePost,
+  deletePostAPI,
   filterPost,
   getListPost,
   resetPost,
@@ -13,7 +13,7 @@ export default function Post() {
   const dispatch = useDispatch();
   const [postLocal, setPostLocal] = useState(null);
   const deleteItem = (id) => {
-    dispatch(deletePost(id));
+    dispatch(deletePostAPI(id));
   };
 
   useEffect(() => {

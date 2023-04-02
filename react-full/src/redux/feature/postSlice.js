@@ -19,6 +19,18 @@ export const getListPost = createAsyncThunk(
     return res.data;
   },
 );
+export const deletePostAPI = createAsyncThunk(
+  'products/deletePost',
+  async (arg, thunkApi) => {
+    // console.log('bb arg', arg);
+    // console.log('bb thunkapi', thunkApi.getState());
+    const res = await axios.delete(
+      `https://reacjs2201-default-rtdb.firebaseio.com/products/${arg}.json`,
+    );
+    thunkApi.dispatch(getListPost());
+    return res.data;
+  },
+);
 
 const postSlice = createSlice({
   name: 'post',
@@ -60,6 +72,16 @@ const postSlice = createSlice({
         state.data = action.payload;
       })
       .addCase(getListPost.rejected, (state, action) => {
+        state.loading = false;
+        state.error = 'Bị lỗi rồi';
+      })
+      .addCase(deletePostAPI.pending, (state, action) => {
+        state.loading = true;
+      })
+      .addCase(deletePostAPI.fulfilled, (state, action) => {
+        state.loading = false;
+      })
+      .addCase(deletePostAPI.rejected, (state, action) => {
         state.loading = false;
         state.error = 'Bị lỗi rồi';
       });
