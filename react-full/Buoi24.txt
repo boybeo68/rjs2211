@@ -1,0 +1,3 @@
+- Chú ý: 
+Luôn luôn LINH ĐỘNG giữa state (data trong component) và store (data trong redux)
+- Những data, actions thực sự cần share giữa nhiều component thì mới cho vào redux 
