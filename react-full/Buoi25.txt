@@ -7,6 +7,6 @@
 Router: 
 - Router để làm gì và tại sao phải sử dụng router
 - Lib: react router, react navigation, wix...
-- Cài đặt, khai báo
-- Chuyển tiếp giữa các router 
-- truyền dữ liệu lên (params, query) router 
+- Cài đặt, khai báo: Provider
+- Chuyển tiếp giữa các router : useNavigate
+- truyền dữ liệu lên (params, query) router : :id, useParams
