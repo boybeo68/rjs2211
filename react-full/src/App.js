@@ -6,9 +6,17 @@ import Home from './todoApp';
 import ReduxApp from './redux';
 import Couter from './redux/components/Couter';
 import Post from './redux/components/Post';
+import {routerData} from './ultils/globalFunction';
+import {useNavigate, Link} from 'react-router-dom';
+import Menu from './Menu';
 
 function App() {
-  return <Post />;
+  const navigate = useNavigate();
+  return (
+    <div>
+      <Menu />
+    </div>
+  );
 }
 
 export default App;

@@ -7,10 +7,13 @@ import {
   getListPost,
   resetPost,
 } from '../feature/postSlice';
+import Menu from '../../Menu';
+import {useNavigate} from 'react-router-dom';
 
 export default function Post() {
   const posts = useSelector((state) => state.posts);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [postLocal, setPostLocal] = useState(null);
   const deleteItem = (id) => {
     dispatch(deletePostAPI(id));
@@ -21,7 +24,7 @@ export default function Post() {
   }, [posts]);
 
   useEffect(() => {
-    dispatch(getListPost('tham so truyen vao'));
+    dispatch(getListPost());
   }, []);
   const filter = (rate) => {
     let converPost = JSON.parse(JSON.stringify(postLocal));
@@ -41,8 +44,13 @@ export default function Post() {
     dispatch(resetPost());
   };
 
+  const gotoDetail = (id, name) => {
+    navigate(`/post/${id}/${name}`);
+  };
+
   return (
     <div>
+      <Menu />
       <h1>Post list</h1>
       {/* <Button onClick={() => filter(3)}>Filter post State</Button>
       <Button
@@ -77,6 +85,11 @@ export default function Post() {
                     <Button onClick={() => deleteItem(item)} variant='danger'>
                       Delete
                     </Button>
+                    <Button
+                      onClick={() => gotoDetail(item, posts.data[item].title)}
+                    >
+                      GotoDetail
+                    </Button>
                   </Card.Body>
                 </Card>
               );
@@ -90,6 +103,11 @@ export default function Post() {
                     <Card.Text>{posts.data[item].content}</Card.Text>
                     <Button onClick={() => deleteItem(item)} variant='danger'>
                       Delete
+                    </Button>
+                    <Button
+                      onClick={() => gotoDetail(item, posts.data[item].title)}
+                    >
+                      GotoDetail
                     </Button>
                   </Card.Body>
                 </Card>

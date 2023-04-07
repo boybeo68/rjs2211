@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from "react";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
+import React, {useEffect, useState} from 'react';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
-import axios from "axios";
-const URL = "https://6319968e8e51a64d2be76eed.mockapi.io/todos";
+import axios from 'axios';
+import Menu from '../Menu';
+const URL = 'https://6319968e8e51a64d2be76eed.mockapi.io/todos';
 
-export default function Home() {
+export default function TodoApp() {
   const [todos, setTodos] = useState(null);
   const [error, seterror] = useState(null);
-  const [valueName, setvalueName] = useState("");
-  const [valueNameEdit, setValueNameEdit] = useState("");
-  const [valueDes, setValueDes] = useState("");
+  const [valueName, setvalueName] = useState('');
+  const [valueNameEdit, setValueNameEdit] = useState('');
+  const [valueDes, setValueDes] = useState('');
   const [loading, setLoading] = useState(false);
   const [isEdit, setisEdit] = useState(null);
   const [counter, setcounter] = useState(0);
@@ -27,7 +28,7 @@ export default function Home() {
       setTodos(result.data);
     } catch (error) {
       setLoading(false);
-      seterror("Có lỗi xảy ra");
+      seterror('Có lỗi xảy ra');
     }
   };
 
@@ -45,7 +46,7 @@ export default function Home() {
     } catch (error) {
       setLoading(false);
       // seterror("Có lỗi xảy ra");
-      alert("Có lỗi xảy ra khi xoá item.");
+      alert('Có lỗi xảy ra khi xoá item.');
       getListTodo();
     }
   };
@@ -61,7 +62,7 @@ export default function Home() {
       // resetData();
     } catch (error) {
       setLoading(false);
-      alert("Có lỗi xảy ra");
+      alert('Có lỗi xảy ra');
       resetData();
     }
   };
@@ -72,7 +73,7 @@ export default function Home() {
     // C1: sử dụng Json parst + stringify. Dùng cho được mọi trường hợp
     const cloneData = JSON.parse(JSON.stringify(todos));
     cloneData.push({
-      id: Number(todos[todos.length - 1].id) + 1 + "",
+      id: Number(todos[todos.length - 1].id) + 1 + '',
       name: valueName,
       isCheck: false,
       description: valueDes,
@@ -115,50 +116,51 @@ export default function Home() {
       });
     } catch (error) {
       setLoading(false);
-      alert("Có lỗi xảy ra");
+      alert('Có lỗi xảy ra');
       resetData();
     }
   };
   const resetData = () => {
     setLoading(false);
-    setvalueName("");
-    setValueDes("");
+    setvalueName('');
+    setValueDes('');
     setisEdit(null);
     getListTodo();
   };
 
   return (
     <div>
+      <Menu />
       <Form>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Group className='mb-3' controlId='formBasicEmail'>
           <Form.Label>Nhập name</Form.Label>
           <Form.Control
             onChange={(text) => {
               setvalueName(text.target.value);
             }}
             value={valueName}
-            type="text"
-            placeholder="Nhập name"
+            type='text'
+            placeholder='Nhập name'
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Group className='mb-3' controlId='formBasicEmail'>
           <Form.Label>Nhập description</Form.Label>
           <Form.Control
             onChange={(text) => {
               setValueDes(text.target.value);
             }}
             value={valueDes}
-            type="text"
-            placeholder="Nhập description"
+            type='text'
+            placeholder='Nhập description'
           />
         </Form.Group>
 
         {isEdit ? (
-          <Button onClick={() => editTodo(isEdit)} variant="success">
+          <Button onClick={() => editTodo(isEdit)} variant='success'>
             Edit
           </Button>
         ) : (
-          <Button onClick={addItemLocal} variant="primary">
+          <Button onClick={addItemLocal} variant='primary'>
             Add
           </Button>
         )}
@@ -175,10 +177,10 @@ export default function Home() {
                   setisEdit(item.id);
                 }}
                 style={{
-                  cursor: "pointer",
-                  backgroundColor: "#f8f8f8",
-                  margin: "10px",
-                  padding: "10px",
+                  cursor: 'pointer',
+                  backgroundColor: '#f8f8f8',
+                  margin: '10px',
+                  padding: '10px',
                 }}
                 key={index}
               >
@@ -189,7 +191,7 @@ export default function Home() {
                       setValueNameEdit(e.target.value);
                     }}
                     onKeyDown={(e) => {
-                      if (e.key === "Enter") {
+                      if (e.key === 'Enter') {
                         editLocal(isEdit);
                         // editTodo(isEdit);
                       }
@@ -197,15 +199,15 @@ export default function Home() {
                     onBlur={() => {
                       editTodo(isEdit);
                     }}
-                    type="text"
+                    type='text'
                   />
                 ) : (
                   <div>
                     <p>
-                      {item.name} -{" "}
+                      {item.name} -{' '}
                       <span
                         onClick={() => deleteLocal(item.id)}
-                        className="deleteData"
+                        className='deleteData'
                       >
                         Delete
                       </span>

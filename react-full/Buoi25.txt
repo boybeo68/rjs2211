@@ -1,0 +1,12 @@
+- Cấu trúc, structure của 1 dụ án, router
+- Cơ chế bảo mật authenication mà thông thường các webisite sử dụng nhé. 
+- Cấu hình custom axios
+- 1 số cách style phổ biến 
+
+
+Router: 
+- Router để làm gì và tại sao phải sử dụng router
+- Lib: react router, react navigation, wix...
+- Cài đặt, khai báo
+- Chuyển tiếp giữa các router 
+- truyền dữ liệu lên (params, query) router 
