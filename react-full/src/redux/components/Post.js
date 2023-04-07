@@ -12,6 +12,7 @@ import {useNavigate} from 'react-router-dom';
 
 export default function Post() {
   const posts = useSelector((state) => state.posts);
+  const userReducer = useSelector((state) => state.userReducer);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [postLocal, setPostLocal] = useState(null);
@@ -24,6 +25,7 @@ export default function Post() {
   }, [posts]);
 
   useEffect(() => {
+    console.log('bb user', userReducer.token);
     dispatch(getListPost());
   }, []);
   const filter = (rate) => {

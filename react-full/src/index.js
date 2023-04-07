@@ -14,8 +14,13 @@ import ReduxApp from './redux';
 import Couter from './redux/components/Couter';
 import Post from './redux/components/Post';
 import PostDetail from './redux/components/PostDetail';
+import Login from './redux/components/Login';
 
 const router = createBrowserRouter([
+  {
+    path: '/login',
+    element: <Login />,
+  },
   {
     path: '/',
     element: <App />,

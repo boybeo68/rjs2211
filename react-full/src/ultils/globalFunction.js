@@ -30,3 +30,5 @@ export const routerData = [
     name: 'Post',
   },
 ];
+
+export const API_KEY = 'AIzaSyCmxTaBVxruDEPSSvsu6fD9dru9Elc1gdo';

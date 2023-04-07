@@ -10,3 +10,13 @@ Router:
 - Cài đặt, khai báo: Provider
 - Chuyển tiếp giữa các router : useNavigate
 - truyền dữ liệu lên (params, query) router : :id, useParams
+
+JWT: json web token. đoạn keycode đã mã hoá
+
+Client : =====> user, pass =====> Server
+Client : <====  success, token (jwt token) <=== Server
+
+Get list post 
+Xoá post 
+Client : ======> GEt: {list post}, gửi kèm token ====> Server
+Client : <======= Detail post, list post <======= Server  =====  verify token (decode: giải mã) biết được là đúng là ông Tung đang truy cập và muốn lấy list post

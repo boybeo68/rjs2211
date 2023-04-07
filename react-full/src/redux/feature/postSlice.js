@@ -14,7 +14,9 @@ export const getListPost = createAsyncThunk(
     console.log('bb arg', arg);
     console.log('bb thunkapi', thunkApi.getState());
     const res = await axios.get(
-      'https://reacjs2201-default-rtdb.firebaseio.com/products.json',
+      `https://reacjs2201-default-rtdb.firebaseio.com/products.json?auth=${
+        thunkApi.getState()?.userReducer?.token
+      }`,
     );
     return res.data;
   },
@@ -25,7 +27,9 @@ export const deletePostAPI = createAsyncThunk(
     // console.log('bb arg', arg);
     // console.log('bb thunkapi', thunkApi.getState());
     const res = await axios.delete(
-      `https://reacjs2201-default-rtdb.firebaseio.com/products/${arg}.json`,
+      `https://reacjs2201-default-rtdb.firebaseio.com/products/${arg}.json?auth=${
+        thunkApi.getState()?.userReducer?.token
+      }`,
     );
     thunkApi.dispatch(getListPost());
     return res.data;
