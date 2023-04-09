@@ -5,7 +5,7 @@ import CartItem from './CartItem';
 import Child from './Child';
 import Menu from '../../../Menu';
 
-const Parent = () => {
+const Parent = ({children}) => {
   const [number, setNumber] = useState(0);
   const [childData, setchildData] = useState(null);
   const [showLight, setShowLight] = useState(true); // ush
@@ -46,8 +46,9 @@ const Parent = () => {
 
   return (
     <div>
-      <Menu />
+      {/* <Menu /> */}
       <h2 className='parent-click'>Parent</h2>
+      {children}
       <p>{childData}</p>
       <p>
         <Button onClick={toggleChild} variant='success'>

@@ -15,6 +15,8 @@ import Couter from './redux/components/Couter';
 import Post from './redux/components/Post';
 import PostDetail from './redux/components/PostDetail';
 import Login from './redux/components/Login';
+import ProtectRouter from './components/ProtectRouter';
+import Menu from './Menu';
 
 const router = createBrowserRouter([
   {
@@ -31,7 +33,11 @@ const router = createBrowserRouter([
   },
   {
     path: '/parent',
-    element: <Parent />,
+    element: (
+      <Parent>
+        <Menu />
+      </Parent>
+    ),
   },
   {
     path: '/todoApp',
@@ -39,7 +45,11 @@ const router = createBrowserRouter([
   },
   {
     path: '/redux',
-    element: <ReduxApp />,
+    element: (
+      <ProtectRouter>
+        <ReduxApp />
+      </ProtectRouter>
+    ),
   },
   {
     path: '/couter',
@@ -47,7 +57,11 @@ const router = createBrowserRouter([
   },
   {
     path: '/post',
-    element: <Post />,
+    element: (
+      <ProtectRouter>
+        <Post />
+      </ProtectRouter>
+    ),
   },
   {
     path: '/post/:idPost/:name',

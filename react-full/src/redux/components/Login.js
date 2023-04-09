@@ -3,12 +3,14 @@ import {Button} from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 import {useDispatch} from 'react-redux';
 import {loginFirebase} from '../feature/userSlice';
+import {useNavigate} from 'react-router-dom';
 import Menu from '../../Menu';
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   return (
     <Form>
       <Form.Group className='mb-3' controlId='exampleForm.ControlInput1'>
@@ -41,6 +43,7 @@ export default function Login() {
               password: password,
             }),
           );
+          navigate('/');
         }}
       >
         Login
