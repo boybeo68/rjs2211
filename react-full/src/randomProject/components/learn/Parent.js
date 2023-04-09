@@ -47,7 +47,7 @@ const Parent = ({children}) => {
   return (
     <div>
       {/* <Menu /> */}
-      <h2 className='parent-click'>Parent</h2>
+      <h2 className='parent-click bgBlue'>Parent</h2>
       {children}
       <p>{childData}</p>
       <p>

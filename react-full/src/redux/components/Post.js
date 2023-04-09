@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import {Card, Button, Row} from 'react-bootstrap';
 import {useSelector, useDispatch} from 'react-redux';
+import PostStyles from '../../css/Post.module.css';
+import '../../css/test.css';
 import {
   deletePostAPI,
   filterPost,
@@ -53,7 +55,8 @@ export default function Post() {
   return (
     <div>
       <Menu />
-      <h1>Post list</h1>
+      <h1 className={PostStyles.error}>Post list</h1>
+      <h1 className={'bgBlue'}>Post 2</h1>
       {/* <Button onClick={() => filter(3)}>Filter post State</Button>
       <Button
         style={{marginLeft: '10px', marginRight: '10px'}}

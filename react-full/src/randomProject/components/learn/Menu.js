@@ -6,6 +6,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
+import '../../../css/a.css';
 const Menu = () => {
   return (
     <Navbar bg='light' expand='lg'>
