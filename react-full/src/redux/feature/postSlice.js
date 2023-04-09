@@ -1,5 +1,5 @@
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
-import axios from 'axios';
+import instance from '../../config/api';
 
 const initialState = {
   data: {},
@@ -13,10 +13,8 @@ export const getListPost = createAsyncThunk(
   async (arg, thunkApi) => {
     console.log('bb arg', arg);
     console.log('bb thunkapi', thunkApi.getState());
-    const res = await axios.get(
-      `https://reacjs2201-default-rtdb.firebaseio.com/products.json?auth=${
-        thunkApi.getState()?.userReducer?.token
-      }`,
+    const res = await instance.get(
+      `/products.json?auth=${thunkApi.getState()?.userReducer?.token}`,
     );
     return res.data;
   },
@@ -26,7 +24,7 @@ export const deletePostAPI = createAsyncThunk(
   async (arg, thunkApi) => {
     // console.log('bb arg', arg);
     // console.log('bb thunkapi', thunkApi.getState());
-    const res = await axios.delete(
+    const res = await instance.delete(
       `https://reacjs2201-default-rtdb.firebaseio.com/products/${arg}.json?auth=${
         thunkApi.getState()?.userReducer?.token
       }`,
