@@ -1,3 +1,10 @@
 - Cấu trúc, structure của 1 dụ án
 - Cấu hình custom axios
-- 1 số cách style phổ biến 
+- 1 số cách style phổ biến: 
++ style như css/scss thông thường
++ sử dụng module css: https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/
++ sử dung styled components : https://styled-components.com/docs/basics
+ "axios": "^1.3.4",
+ "bootstrap": "^5.2.3",
+ "react-bootstrap": "^2.7.2",
+ "react-router-dom": "^6.10.0",
