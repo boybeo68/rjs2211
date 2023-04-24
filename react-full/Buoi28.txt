@@ -1,0 +1,13 @@
+phỏng vấn: 
+ - Kỹ năng: Sử dụng bộ câu hỏi interview để tự tin phỏng vấn, sử dụng nền tảng tuyển người ( topcv, itviec...)
+ - CV: 
+    + không ghi số năm kinh nghiệm nhưng phải có evidence các dự án đã làm: git, mô tả nghiệp, công nghệ.
+    => Thông tin dự án đã làm trong khoảng 6 - 8 dòng
+    + tên dự án - thời gian
+    + mô tả nghiệp vụ 
+    + Công nghệ đã làm 
+    cố gắng làm khoảng 2-3 dự án ở nhà. 
+- apply junior : có lương
+- apply fresher, intern: đào tạo thêm 2 - 6 tháng
+
+=> không đặt quá nặng về lương lậu giai đoạn đầu
